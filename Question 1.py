@@ -18,5 +18,17 @@ def sort_series(sailors):
     print(order)
 sort_series(testing)
 
+def importing_csv_file(filename):
+    with open(filename+'.csv') as f:
+        reader = csv.reader(f)
+        raw_data = [r for r in reader]
+    return raw_data[1:]
+
 def read_sailor_data():
-    
+    wehre_is_data = 'sailor_performances'
+    raw_data = importing_csv_file(where_is_data)
+    sailors = {}
+    for people in raw_data:
+        sailors.update({people[0]})
+    return(sailors)
+read_sailor_data()
