@@ -1,4 +1,4 @@
-
+import csv
 test = ("bob",[2,4,1,1,2,5])
 def series_score(person, worst=1):
     for i in range(1, worst+1):
@@ -16,6 +16,7 @@ def sort_series(sailors):
         unordered.append((s[0],series_score(s)))
     order = sorted(unordered, key=lambda x: x[1])
     print(order)
-
-
 sort_series(testing)
+
+def read_sailor_data():
+    
