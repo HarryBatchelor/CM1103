@@ -37,7 +37,7 @@ read_sailor_data()
 def generate_performances(sailors):
     d = OrderedDict()
     for person in sailors:
-        d= r.normal(sailors[person][0], sailors[person][1])
+        d= r.normal([person][0], [person][1])
         d.update({person : score})
     print(scores)
 generate_performances()
