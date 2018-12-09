@@ -1,5 +1,6 @@
 import csv
 from collections import OrderedDict
+from numpy import random as r
 #1a
 test = ("bob",[2,4,1,1,2,5])
 def series_score(person, worst=1):
@@ -32,16 +33,16 @@ def read_sailor_data():
     for people in raw:
         sailors.update({people[0]:(float(people[1]),float(people[2]))})
     print(sailors)
-read_sailor_data()
+sailors = read_sailor_data()
 #1d
 def generate_performances(sailors):
     d = OrderedDict()
     for person in sailors:
         d= r.normal([person][0], [person][1])
         d.update({person : score})
-    print(scores)
-generate_performances()
+    print(d)
+generate_performances(sailors)
 #1e
-def calculate_finishing_order():
-    final_order = []
-    for person in sailors:
+# def calculate_finishing_order():
+#     final_order = []
+#     for person in sailors:
