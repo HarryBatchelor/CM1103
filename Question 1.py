@@ -36,13 +36,29 @@ def read_sailor_data():
 sailors = read_sailor_data()
 #1d
 def generate_performances(sailors):
-    d = OrderedDict()
+    scores = {}
     for person in sailors:
-        d= r.normal([person][0], [person][1])
-        d.update({person : score})
-    print(d)
-generate_performances(sailors)
+        score = r.normal(sailors[person][0],sailors[person][1])
+        scores.update({person : score})
+    return scores
 #1e
-# def calculate_finishing_order():
-#     final_order = []
-#     for person in sailors:
+def calculate_final_order(sailor_scores):
+    final_order = []
+    for people in (sorted(sailor_scores.items(),key = lambda x: x[1], reverse=True)):
+        final_order.append(people[0])
+    return final_order
+#1f
+def simulation_races(races=6):
+    results = {'Bob':[], 'Alice':[], 'Clare':[], 'Dennis':[], 'Eva':[]}
+    for i in range(races):
+        r = (calculate_final_order(generate_performances(read_sailor_data())))
+        for person in r:
+            results[person].append(r.index(person)+1)
+            return results
+
+def main():
+	results = simulation_races()
+	print(results)
+
+if __name__ == '__main__':
+	main()
