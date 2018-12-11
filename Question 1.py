@@ -31,7 +31,8 @@ def read_sailor_data():
     raw = import_file(data)
     sailors = {}
     for people in raw:
-        sailors.update({people[0]:(float(people[1]),float(people[2]))})
+        if people !="":
+            sailors.update({people[0]:(float(people[1]),float(people[2]))})
     return(sailors)
 # read_sailor_data()
 #1d
