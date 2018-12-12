@@ -34,7 +34,8 @@ def read_sailor_data():
         if people !="":
             sailors.update({people[0]:(float(people[1]),float(people[2]))})
     return(sailors)
-# read_sailor_data()
+    print(people)
+read_sailor_data()
 #1d
 def generate_performances(sailors):
     d = OrderedDict()
@@ -42,12 +43,6 @@ def generate_performances(sailors):
         score = r.normal(sailors[person][0],sailors[person][1])
         d.update({person : score})
     return d
-# def generate_performances(sailors):
-# 	scores = {}
-# 	for person in sailors:
-# 		score = r.normal(sailors[person][0],sailors[person][1])
-# 		scores.update({person : score})
-# 	return scores
 #1e
 def calculate_final_order(sailor_scores):
     final_order = []

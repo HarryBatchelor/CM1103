@@ -3,6 +3,7 @@ import csv
 from numpy import random as r
 from random import randint
 from collections import Counter
+from Q1_1816377 import *
 
 def gen_counts(race_standing):
     count = []
@@ -13,15 +14,16 @@ def gen_counts(race_standing):
     for numbers in data:
         count_output.append([numbers,data[numbers]])
     return count_output
-    
-def add_sailor_to_graph():
+
+
+def add_sailor_to_graph(loops):
     with open('sailor_performances.csv', mode = 'w') as f:
         writer = csv.writer(f)
         for i in range(loops):
-            writer.write_row(['Example'+str(i), randint(0,100),20])
+            writer.writerow(['Example'+str(i), randint(0,100),20])
 
 def plot():
-    race_standing = (generate_performaces(read_sailor_data()))
+    race_standing = (generate_performances(read_sailor_data()))
     sailors = read_sailor_data()
     x = []; y = []
     standing_count = sorted(gen_counts(race_standing))
@@ -37,5 +39,5 @@ def plot():
     plt.title('Score')
     plt.show()
 
-add_sailor_to_graph(10000)
+add_sailor_to_graph(100)
 plot()
