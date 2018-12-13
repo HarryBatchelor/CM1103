@@ -17,7 +17,7 @@ def gen_counts(race_standing):
 
 
 def add_sailor_to_graph(loops):
-    with open('sailor_performances.csv', mode = 'w') as f:
+    with open('sailor_performances.csv', mode = 'w', newline="") as f:
         writer = csv.writer(f)
         for i in range(loops):
             writer.writerow(['Example'+str(i), randint(0,100),20])
@@ -39,5 +39,5 @@ def plot():
     plt.title('Score')
     plt.show()
 
-add_sailor_to_graph(100)
+add_sailor_to_graph(1000000)
 plot()

@@ -34,8 +34,7 @@ def read_sailor_data():
         if people !="":
             sailors.update({people[0]:(float(people[1]),float(people[2]))})
     return(sailors)
-    print(people)
-read_sailor_data()
+# read_sailor_data()
 #1d
 def generate_performances(sailors):
     d = OrderedDict()
